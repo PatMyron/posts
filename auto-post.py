@@ -3,10 +3,10 @@ import os
 import praw
 import re
 reddit = praw.Reddit(client_id='zOTTFDpmxJH_0Q',
-                     client_secret='os.environ['SECRET']',
-                     password='os.environ['PASS']',
+                     client_secret=os.environ['SECRET'],
+                     password=os.environ['PASS'],
                      user_agent='testscript',
-                     username='myroon5')
+                     username=os.environ['USER'])
 def post(feed, sub, pattern):
   d = feedparser.parse(feed)
   for entry in d['entries']:
