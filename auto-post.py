@@ -15,7 +15,9 @@ def post(feed, sub, pattern):
         reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
       except:
         pass
+# post('https://feeds.feedburner.com/AmazonWebServicesBlog', 'aws', 'Now Open – AWS .* Region')
 # post('https://android-developers.blogspot.com/atom.xml', 'androiddev', 'Android Studio [0-9.]+')
+# post('https://feeds.feedburner.com/PythonInsider', 'python', 'Python [0-9.]+ ')
 post('https://code.visualstudio.com/feed.xml', 'vscode', 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)')
 post('https://blog.rust-lang.org/feed.xml', 'rust', 'Announcing Rust [0-9.]+')
 post('https://blog.golang.org/feed.atom', 'golang', 'Go [0-9.]+ is released')
@@ -24,4 +26,3 @@ post('https://devblogs.microsoft.com/typescript/feed/', 'javascript', 'Announcin
 post('https://devblogs.microsoft.com/powershell/feed/', 'powershell', 'Announcing PowerShell [0-9.]+')
 post('https://swift.org/atom.xml', 'swift', 'Swift [0-9.]+ released!')
 post('https://www.ruby-lang.org/en/feeds/news.rss', 'ruby', 'Ruby [0-9.]+ Released')
-post('https://feeds.feedburner.com/AmazonWebServicesBlog', 'aws', 'Now Open – AWS .* Region')
