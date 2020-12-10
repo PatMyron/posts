@@ -2,7 +2,7 @@ import feedparser
 import os
 import praw
 import re
-reddit = praw.Reddit(client_id='zOTTFDpmxJH_0Q',
+reddit = praw.Reddit(client_id=os.environ['ID'],
                      client_secret=os.environ['SECRET'],
                      password=os.environ['PASS'],
                      user_agent='testscript',
