@@ -10,6 +10,7 @@ jobs:
         with:
           python-version: 3
       - run: |
+          pip install feedparser praw
           python auto-post.py
         env:
           SECRET: ${{ secrets.SECRET }}
