@@ -18,6 +18,7 @@ def post(feed, sub, pattern):
 # post('https://feeds.feedburner.com/AmazonWebServicesBlog', 'aws', 'Now Open – AWS .* Region')
 # post('https://android-developers.blogspot.com/atom.xml', 'androiddev', 'Android Studio [0-9.]+')
 # post('https://feeds.feedburner.com/PythonInsider', 'python', 'Python [0-9.]+ ')
+post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', 'azure', 'Microsoft .* establish .* region')
 post('https://code.visualstudio.com/feed.xml', 'vscode', 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)')
 post('https://blog.rust-lang.org/feed.xml', 'rust', 'Announcing Rust [0-9.]+')
 post('https://blog.golang.org/feed.atom', 'golang', 'Go [0-9.]+ is released')
