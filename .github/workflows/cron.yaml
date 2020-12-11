@@ -15,3 +15,5 @@ jobs:
         env:
           SECRET: ${{ secrets.SECRET }}
           PASS: ${{ secrets.PASS }}
+          USER: ${{ secrets.USER }}
+          ID: ${{ secrets.ID }}
