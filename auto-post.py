@@ -18,12 +18,15 @@ def post(feed, sub, pattern):
       pass
     if re.match(pattern, entry['title'], re.IGNORECASE) and time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < 60 * 60 * 24 * 7:
       try:
-        reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
+        if 'feedburner_origlink' in entry:
+          reddit.subreddit(sub).submit(entry['title'], url=entry['feedburner_origlink'], resubmit=False)
+        else:
+          reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
       except:
         pass
-# post('https://feeds.feedburner.com/AmazonWebServicesBlog', 'aws', 'Now Open – AWS .* Region')
-# post('https://android-developers.blogspot.com/atom.xml', 'androiddev', 'Android Studio [0-9.]+')
-# post('https://feeds.feedburner.com/PythonInsider', 'python', 'Python [0-9.]+ ')
+post('https://feeds.feedburner.com/AmazonWebServicesBlog', 'aws', 'Now Open – AWS .* Region')
+post('https://android-developers.blogspot.com/atom.xml', 'androiddev', 'Android Studio [0-9.]+')
+post('https://feeds.feedburner.com/PythonInsider', 'python', 'Python [0-9.]+ ')
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', 'azure', 'Microsoft .* establish .* region')
 post('https://code.visualstudio.com/feed.xml', 'vscode', 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)')
 post('https://blog.rust-lang.org/feed.xml', 'rust', 'Announcing Rust [0-9.]+')
