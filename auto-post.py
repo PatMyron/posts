@@ -11,6 +11,11 @@ reddit = praw.Reddit(client_id=os.environ['ID'],
 def post(feed, sub, pattern):
   d = feedparser.parse(feed)
   for entry in d['entries']:
+    try:
+      if time.mktime(time.localtime()) - time.mktime(entry['published_parsed']) > 60 * 60 * 24 * 7:
+        continue
+    except:
+      pass
     if re.match(pattern, entry['title'], re.IGNORECASE) and time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < 60 * 60 * 24 * 7:
       try:
         reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
