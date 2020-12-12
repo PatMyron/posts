@@ -2,6 +2,7 @@ import feedparser
 import os
 import praw
 import re
+import time
 reddit = praw.Reddit(client_id=os.environ['ID'],
                      client_secret=os.environ['SECRET'],
                      password=os.environ['PASS'],
@@ -10,7 +11,7 @@ reddit = praw.Reddit(client_id=os.environ['ID'],
 def post(feed, sub, pattern):
   d = feedparser.parse(feed)
   for entry in d['entries']:
-    if re.match(pattern, entry['title'], re.IGNORECASE) and not re.match('(Visual Studio Code June 2020|Ruby (2.4.10|2.5.8|2.6.6|2.7.1)|Swift (3.0|4.1|4.2)|Android Studio 4.1|NEIGHBORHOODS OF PITTSBURGH - (HOMEWOOD|MEXICAN WAR STREETS|LAWRENCEVILLE|POLISH HILL|MT. OLIVER|MOUNT WASHINGTON|SPRING HILL|WILKINSBURG|GREENFIELD))', entry['title']):
+    if re.match(pattern, entry['title'], re.IGNORECASE) and time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < 60 * 60 * 24 * 7:
       try:
         reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
       except:
