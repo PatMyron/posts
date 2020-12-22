@@ -20,9 +20,8 @@ def post(feed, subs, pattern):
       for sub in subs:
         try:
           if 'feedburner_origlink' in entry:
-            reddit.subreddit(sub).submit(entry['title'], url=entry['feedburner_origlink'], resubmit=False)
-          else:
-            reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
+            entry['link'] = entry['feedburner_origlink']
+          reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
         except Exception as e:
           print(e)
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region')
