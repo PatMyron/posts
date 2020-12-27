@@ -39,4 +39,6 @@ post('https://blog.golang.org/feed.atom', ['golang', 'programming'], 'Go [0-9.]+
 post('https://devblogs.microsoft.com/typescript/feed/', ['javascript', 'typescript', 'programming'], 'Announcing TypeScript [0-9.]+$')
 post('https://devblogs.microsoft.com/powershell/feed/', ['powershell'], 'Announcing PowerShell [0-9.]+')
 post('https://www.ruby-lang.org/en/feeds/news.rss', ['ruby'], 'Ruby [0-9.]+ Released')
+post('https://palletsprojects.com/blog/feed.xml', ['flask', 'python', 'programming'], 'Flask [0-9.]+ Released')
+post('https://www.djangoproject.com/rss/weblog/', ['django', 'python', 'programming'], 'Django [0-9.]+ Released')
 # post('https://www.youtube.com/feeds/videos.xml?channel_id=UC88Cq0GO7AZebZh4Z0K3-AA', ['pittsburgh'], 'NEIGHBORHOODS OF PITTSBURGH')
