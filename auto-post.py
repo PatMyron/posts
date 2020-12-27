@@ -24,6 +24,7 @@ def post(feed, subs, pattern):
           reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
         except Exception as e:
           print(e)
+post('https://www.docker.com/blog/feed/', ['docker', 'programming'], 'Introducing Docker Engine [0-9.]+')
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region')
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', ['azure'], 'Microsoft .* establish .* region')
 post('https://code.visualstudio.com/feed.xml', ['vscode', 'programming'], 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)')
