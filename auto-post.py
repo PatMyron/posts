@@ -29,6 +29,7 @@ post('https://github.blog/feed/', ['git', 'github', 'programming'], '.* Git [0-9
 post('https://www.docker.com/blog/feed/', ['docker', 'programming'], 'Introducing Docker Engine [0-9.]+')
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region')
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', ['azure'], 'Microsoft .* establish .* region')
+post('https://www.latex-project.org/feed.xml', ['latex'], '.* LaTeX release')
 post('https://code.visualstudio.com/feed.xml', ['vscode', 'programming'], 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)')
 post('https://android-developers.blogspot.com/atom.xml', ['androiddev'], 'Android Studio [0-9.]+')
 post('https://blog.jetbrains.com/kotlin/feed/', ['kotlin', 'androiddev'], 'Kotlin [0-9.]+ Released')
