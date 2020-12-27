@@ -24,6 +24,7 @@ def post(feed, subs, pattern):
           reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
         except Exception as e:
           print(e)
+post('https://blog.chromium.org/atom.xml', ['chrome'], 'Chrome [0-9.]+')
 post('https://github.blog/feed/', ['git', 'github', 'programming'], '.* Git [0-9.]+')
 post('https://www.docker.com/blog/feed/', ['docker', 'programming'], 'Introducing Docker Engine [0-9.]+')
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region')
