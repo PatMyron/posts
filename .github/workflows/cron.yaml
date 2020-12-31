@@ -1,6 +1,7 @@
 on:
   schedule:
     - cron: '*/5 * * * *'
+  workflow_dispatch: # Enables on-demand/manual triggering
 jobs:
   job:
     runs-on: ubuntu-latest
@@ -11,7 +12,7 @@ jobs:
           python-version: 3
       - run: |
           pip install feedparser praw
-          python auto-post.py
+          for i in {1..30}; do python auto-post.py; done
         env:
           SECRET: ${{ secrets.SECRET }}
           PASS: ${{ secrets.PASS }}
