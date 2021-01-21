@@ -32,6 +32,7 @@ post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebSer
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', ['azure'], 'Microsoft .* establish .* region') # 6
 post('https://www.latex-project.org/feed.xml', ['latex'], '.* LaTeX release') # 2
 post('https://code.visualstudio.com/feed.xml', ['vscode', 'programming'], 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)') # 11
+post('https://blog.rstudio.com/index.xml', ['rstats'], '(Announcing )?RStudio v?[0-9]\.[0-9](?! Preview)') # 1
 post('https://android-developers.blogspot.com/atom.xml', ['androiddev'], 'Android Studio [0-9.]+') # 3
 post('https://blog.jetbrains.com/kotlin/feed/', ['kotlin', 'androiddev'], 'Kotlin [0-9.]+ Released') # 4
 post('https://swift.org/atom.xml', ['swift', 'iOSProgramming'], 'Swift [0-9.]+ released!') # 2
