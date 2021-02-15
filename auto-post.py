@@ -30,6 +30,7 @@ post('https://github.blog/feed/', ['git', 'github', 'programming'], '.* Git [0-9
 post('https://www.docker.com/blog/feed/', ['docker', 'programming'], 'Introducing Docker Engine [0-9.]+') # 0.5
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region') # 3
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', ['azure'], 'Microsoft .* establish .* region') # 6
+post('https://kubernetes.io/feed.xml', ['kubernetes'], 'Kubernetes [0-9.]+:') # 4
 post('https://www.latex-project.org/feed.xml', ['latex'], '.* LaTeX release') # 2
 post('https://code.visualstudio.com/feed.xml', ['vscode', 'programming'], 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)') # 11
 post('https://blog.rstudio.com/index.xml', ['rstats'], '(Announcing )?RStudio v?[0-9]\.[0-9](?! Preview)') # 1
@@ -44,4 +45,6 @@ post('https://devblogs.microsoft.com/powershell/feed/', ['powershell'], 'Announc
 post('https://www.ruby-lang.org/en/feeds/news.rss', ['ruby'], 'Ruby [0-9.]+ Released') # 8
 post('https://palletsprojects.com/blog/feed.xml', ['flask', 'python', 'programming'], 'Flask [0-9.]+ Released') # 1
 post('https://www.djangoproject.com/rss/weblog/', ['django', 'python', 'programming'], 'Django [0-9.]+ Released') # 1
+post('https://intellij-rust.github.io/feed.xml', ['rust'], 'IntelliJ Rust Changelog ') # 24
+# post('https://rust-analyzer.github.io/feed.xml', ['rust'], 'Changelog ') # 52
 # post('https://www.youtube.com/feeds/videos.xml?channel_id=UC88Cq0GO7AZebZh4Z0K3-AA', ['pittsburgh'], 'NEIGHBORHOODS OF PITTSBURGH')
