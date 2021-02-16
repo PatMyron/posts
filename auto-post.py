@@ -8,15 +8,18 @@ reddit = praw.Reddit(client_id=os.environ['ID'],
                      password=os.environ['PASS'],
                      user_agent='testscript',
                      username=os.environ['USER'])
+
+def within(entry, seconds):
+    try:
+      return time.mktime(time.localtime()) - time.mktime(entry['published_parsed']) < seconds
+    except:
+      pass
+    return time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < seconds
+
 def post(feed, subs, pattern):
   d = feedparser.parse(feed)
   for entry in d['entries']:
-    try:
-      if time.mktime(time.localtime()) - time.mktime(entry['published_parsed']) > 60 * 60 * 24 * 7:
-        continue
-    except:
-      pass
-    if re.match(pattern, entry['title'], re.IGNORECASE) and time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < 60 * 60 * 24 * 7:
+    if re.match(pattern, entry['title'], re.IGNORECASE) and within(entry, 60 * 60 * 24):
       for sub in subs:
         try:
           if 'feedburner_origlink' in entry:
