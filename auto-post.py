@@ -16,14 +16,15 @@ def within(entry, seconds):
       pass
     return time.mktime(time.localtime()) - time.mktime(entry['updated_parsed']) < seconds
 
+def normalize_link(entry):
+    entry['link'] = entry.get('feedburner_origlink', entry['link'])
+
 def post(feed, subs, pattern):
-  d = feedparser.parse(feed)
-  for entry in d['entries']:
+  for entry in feedparser.parse(feed)['entries']:
     if re.match(pattern, entry['title'], re.IGNORECASE) and within(entry, 60 * 60 * 24):
       for sub in subs:
         try:
-          if 'feedburner_origlink' in entry:
-            entry['link'] = entry['feedburner_origlink']
+          normalize_link(entry)
           reddit.subreddit(sub).submit(entry['title'], url=entry['link'], resubmit=False)
         except Exception as e:
           print(e)
