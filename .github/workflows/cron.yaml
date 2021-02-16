@@ -12,7 +12,7 @@ jobs:
           python-version: 3
       - run: |
           pip install feedparser praw
-          for i in {1..30}; do python auto-post.py; done
+          for i in {1..100}; do python auto-post.py; done
         env:
           SECRET: ${{ secrets.SECRET }}
           PASS: ${{ secrets.PASS }}
