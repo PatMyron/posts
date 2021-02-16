@@ -3,6 +3,8 @@ import os
 import praw
 import re
 import time
+from urllib.parse import urlparse, urlunparse
+
 reddit = praw.Reddit(client_id=os.environ['ID'],
                      client_secret=os.environ['SECRET'],
                      password=os.environ['PASS'],
@@ -18,6 +20,9 @@ def within(entry, seconds):
 
 def normalize_link(entry):
     entry['link'] = entry.get('feedburner_origlink', entry['link'])
+    parsed_url = list(urlparse(entry['link']))
+    parsed_url[4] = '&'.join([x for x in parsed_url[4].split('&') if not x.startswith('utm_')])
+    entry['link'] = urlunparse(parsed_url)
 
 def post(feed, subs, pattern):
   for entry in feedparser.parse(feed)['entries']:
