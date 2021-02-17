@@ -40,6 +40,7 @@ post('https://www.docker.com/blog/feed/', ['docker', 'programming'], 'Introducin
 post('https://feeds.feedburner.com/AmazonWebServicesBlog', ['aws', 'AmazonWebServices'], 'Now Open – AWS .* Region') # 3
 post('https://azurecomcdn.azureedge.net/en-us/updates/feed/', ['azure'], 'Microsoft .* establish .* region') # 6
 post('https://kubernetes.io/feed.xml', ['kubernetes'], 'Kubernetes [0-9.]+:') # 4
+post('https://www.hashicorp.com/blog/products/terraform/feed.xml', ['terraform'], 'Announcing( HashiCorp)? Terraform [0-9.]+') # 1
 post('https://www.latex-project.org/feed.xml', ['latex'], '.* LaTeX release') # 2
 post('https://code.visualstudio.com/feed.xml', ['vscode', 'programming'], 'Visual Studio Code (January|February|March|April|May|June|July|August|September|October|November|December)') # 11
 post('https://blog.rstudio.com/index.xml', ['rstats'], '(Announcing )?RStudio v?[0-9]\.[0-9](?! Preview)') # 1
