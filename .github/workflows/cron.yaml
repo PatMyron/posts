@@ -11,7 +11,7 @@ jobs:
         with:
           python-version: 3
       - run: |
-          pip install feedparser praw
+          pip install -q feedparser praw
           for i in {1..100}; do python auto-post.py; done
         env:
           SECRET: ${{ secrets.SECRET }}
