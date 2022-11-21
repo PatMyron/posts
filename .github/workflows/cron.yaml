@@ -18,3 +18,7 @@ jobs:
           PASS: ${{ secrets.PASS }}
           USER: ${{ secrets.USER }}
           ID: ${{ secrets.ID }}
+          SECRET2: ${{ secrets.SECRET2 }}
+          PASS2: ${{ secrets.PASS2 }}
+          USER2: ${{ secrets.USER2 }}
+          ID2: ${{ secrets.ID2 }}
