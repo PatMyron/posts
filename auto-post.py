@@ -58,3 +58,32 @@ post('https://www.djangoproject.com/rss/weblog/', ['django', 'python', 'programm
 post('https://intellij-rust.github.io/feed.xml', ['rust'], 'IntelliJ Rust Changelog ') # 24
 # post('https://rust-analyzer.github.io/feed.xml', ['rust'], 'Changelog ') # 52
 # post('https://www.youtube.com/feeds/videos.xml?channel_id=UC88Cq0GO7AZebZh4Z0K3-AA', ['pittsburgh'], 'NEIGHBORHOODS OF PITTSBURGH')
+
+reddit = praw.Reddit(client_id=os.environ['ID2'],
+                     client_secret=os.environ['SECRET2'],
+                     password=os.environ['PASS2'],
+                     user_agent='testscript',
+                     username=os.environ['USER2'])
+
+for feed in [
+    # "https://lizclimo.tumblr.com/rss",
+    # "https://feeds.feedburner.com/Explosm",
+    # "https://extrafabulouscomics.com/feed/", # non-descriptive titles
+    "https://www.smbc-comics.com/comic/rss", # comic name in title
+    "https://xkcd.com/atom.xml",
+    "https://feeds.feedburner.com/PoorlyDrawnLines",
+    "https://pbfcomics.com/feed/",
+    "https://theycantalk.com/rss",
+    "https://arcaderage.co/feed/",
+    "https://www.safelyendangered.com/feed/",
+    "https://goodbearcomics.com/feed/",
+    "https://inkyrickshaw.com/feed/",
+    "https://warandpeas.com/feed/",
+    "http://www.lunarbaboon.com/comics/rss.xml",
+    "https://thejenkinscomic.wordpress.com/feed/",
+    # "https://dogmodog.com/rss.xml", # expired cert
+    # "https://sweatybirdcomics.tumblr.com/rss",
+    # "https://tommy-siegel.tumblr.com/rss",
+    # "https://webcomicname.com/rss", # missing titles
+]:
+    post(feed, ["comics"], "")
