@@ -26,7 +26,7 @@ def normalize_link(entry):
 
 def post(feed, subs, pattern):
   for entry in feedparser.parse(feed)['entries']:
-    if re.match(pattern, entry['title'], re.IGNORECASE) and within(entry, 60 * 60 * 24):
+    if 'title' in entry and re.match(pattern, entry['title'], re.IGNORECASE) and within(entry, 60 * 60 * 24):
       for sub in subs:
         try:
           normalize_link(entry)
@@ -82,8 +82,8 @@ for feed in [
     "http://www.lunarbaboon.com/comics/rss.xml",
     "https://thejenkinscomic.wordpress.com/feed/",
     # "https://dogmodog.com/rss.xml", # expired cert
-    # "https://sweatybirdcomics.tumblr.com/rss",
-    # "https://tommy-siegel.tumblr.com/rss",
-    # "https://webcomicname.com/rss", # missing titles
+    "https://sweatybirdcomics.tumblr.com/rss",
+    "https://tommy-siegel.tumblr.com/rss",
+    "https://webcomicname.com/rss",
 ]:
     post(feed, ["comics"], "")
