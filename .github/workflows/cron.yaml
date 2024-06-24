@@ -6,10 +6,7 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3
+      - uses: actions/checkout@v4
       - run: |
           pip install -q feedparser praw
           for i in {1..100}; do python auto-post.py; done
