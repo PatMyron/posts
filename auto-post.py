@@ -55,6 +55,10 @@ post('https://devblogs.microsoft.com/powershell/feed/', ['powershell'], 'Announc
 post('https://www.ruby-lang.org/en/feeds/news.rss', ['ruby'], 'Ruby [0-9.]+ Released') # 8
 post('https://palletsprojects.com/blog/feed.xml', ['flask', 'python', 'programming'], 'Flask [0-9.]+ Released') # 1
 post('https://www.djangoproject.com/rss/weblog/', ['django', 'python', 'programming'], 'Django [0-9.]+ Released') # 1
+post('https://laravel.com/feed', ['laravel', 'php', 'programming'], 'Laravel v?[0-9][0-9. -]+ released!?') # issue #2
+post('https://rubyonrails.org/feed.xml', ['rails', 'ruby', 'programming'], 'Rails Versions .* released|Rails [0-9.]+.* released') # issue #2
+post('https://about.gitlab.com/releases.xml', ['gitlab', 'devops', 'programming'], 'GitLab [0-9.]+') # issue #2
+post('https://blog.jquery.com/feed/', ['jquery', 'javascript', 'programming'], 'jQuery [0-9.]+') # issue #2
 post('https://intellij-rust.github.io/feed.xml', ['rust'], 'IntelliJ Rust Changelog ') # 24
 # post('https://rust-analyzer.github.io/feed.xml', ['rust'], 'Changelog ') # 52
 # post('https://www.youtube.com/feeds/videos.xml?channel_id=UC88Cq0GO7AZebZh4Z0K3-AA', ['pittsburgh'], 'NEIGHBORHOODS OF PITTSBURGH')
